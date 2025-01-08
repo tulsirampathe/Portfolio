@@ -4,6 +4,7 @@ import creator from "./creator.png";
 import mobile from "./mobile.png";
 import web from "./web.png";
 import github from "./github.png";
+import brower from "./brower.svg"
 import menu from "./menu.svg";
 import close from "./close.svg";
 
@@ -20,15 +21,21 @@ import redux from "./tech/redux.png";
 import tailwind from "./tech/tailwind.png";
 import typescript from "./tech/typescript.png";
 import threejs from "./tech/threejs.svg";
+import express from "./tech/express.png";
+import sql from "./tech/sql.png";
+import postman from "./tech/postman.png";
+import npm from "./tech/npm.png";
+import c from "./tech/c.png";
+import cpp from "./tech/cpp.png";
 
 import meta from "./company/meta.png";
 import shopify from "./company/shopify.png";
 import starbucks from "./company/starbucks.png";
 import tesla from "./company/tesla.png";
 
-import carrent from "./carrent.png";
-import jobit from "./jobit.png";
-import tripguide from "./tripguide.png";
+import codenest from './projects/codenest.png'
+import linkdInClone from './projects/linkedInClone.png'
+import snakeGame from './projects/snakeGame.png'
 
 export {
   logo,
@@ -37,6 +44,9 @@ export {
   mobile,
   web,
   github,
+  brower,
+  postman,
+  npm,
   menu,
   close,
   css,
@@ -45,6 +55,8 @@ export {
   git,
   html,
   javascript,
+  c,
+  cpp,
   mongodb,
   nodejs,
   reactjs,
@@ -52,11 +64,13 @@ export {
   tailwind,
   typescript,
   threejs,
+  express,
+  sql,
   meta,
   shopify,
   starbucks,
   tesla,
-  carrent,
-  jobit,
-  tripguide,
+  codenest,
+  linkdInClone,
+  snakeGame
 };
