@@ -27,7 +27,6 @@ const Hero = () => {
         </div>
       </div>
 
-      {/* Render the updated ComputersCanvas */}
       <ComputersCanvas />
 
       <div className="absolute xs:bottom-5 bottom-32 w-full flex justify-center items-center">
