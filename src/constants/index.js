@@ -371,6 +371,23 @@ const projects = [
   },
 ];
 
+const socialMediaLinks = [
+  {
+    name: "LinkedIn",
+    url: "https://www.linkedin.com/in/tulsiram-pathe-03b7b9258/",
+    img: "./social_media/linkedin.png"
+  },
+  {
+    name: "GitHub",
+    url: "https://github.com/tulsirampathe",
+    img: './social_media/github.png'
+  },
+  {
+    name: "Instagram",
+    url: "https://www.instagram.com/tulsiram_pathe_/",
+    img: './social_media/instagram.png'
+  },
+]
 export {
   backendTechnologies,
   experiences,
@@ -381,4 +398,5 @@ export {
   technologies,
   testimonials,
   toolsTechnologies,
+  socialMediaLinks
 };
