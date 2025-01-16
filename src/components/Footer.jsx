@@ -17,8 +17,8 @@ function Footer() {
               alt={`${social.name} icon`}
               className="w-1/2 h-1/2 object-contain"
             />
-               <span className="absolute right-full px-3 py-1 text-xs text-white bg-gray-900 rounded shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap">
-               {social.name}
+            <span className="absolute right-full px-3 py-1 text-xs text-white bg-gray-900 rounded shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap">
+              {social.name}
             </span>
           </div>
         ))}
