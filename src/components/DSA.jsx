@@ -11,7 +11,7 @@ import axios from "axios";
 function DSA() {
   const [totalQuestionStats, setTotalQuestionStats] = useState(0);
   const [totalActiveDays, setTotalActiveDays] = useState(0);
-  const [selectedPlatform, setSelectedPlatform] = useState("")
+  const [selectedPlatform, setSelectedPlatform] = useState("");
   const [data, setData] = useState(null);
 
   const allCalculatePlatformStats = () => {
@@ -20,24 +20,27 @@ function DSA() {
       return;
     }
 
-    setSelectedPlatform("")
+    setSelectedPlatform("");
 
     const platformProfiles = data.platformProfiles.platformProfiles;
 
     let totalQuestions = 0;
-    let totalDaysActive = 0;
+
+    const setOfActiveDays = new Set();
 
     for (const profile of platformProfiles) {
       totalQuestions += profile.totalQuestionStats.totalQuestionCounts;
 
       const submissionObj =
         profile.dailyActivityStatsResponse.submissionCalendar;
-      totalDaysActive += Object.keys(submissionObj).length;
-    }
 
+      // Add each key from submissionObj to the Set
+      Object.keys(submissionObj).forEach((day) => setOfActiveDays.add(day));
+    }
+    
     // Update state with calculated values
     setTotalQuestionStats(totalQuestions);
-    setTotalActiveDays(totalDaysActive);
+    setTotalActiveDays(setOfActiveDays.size);
   };
 
   useEffect(() => {
@@ -62,7 +65,7 @@ function DSA() {
     if (data) {
       allCalculatePlatformStats();
     }
-  }, [data]); 
+  }, [data]);
 
   const calculatePlatformStats = (platformName) => {
     if (!data || !data.platformProfiles) {
@@ -70,7 +73,7 @@ function DSA() {
       return;
     }
 
-    setSelectedPlatform(platformName)
+    setSelectedPlatform(platformName);
 
     const profile = data.platformProfiles.platformProfiles.find(
       (pt) => pt.platform === platformName
@@ -123,7 +126,11 @@ function DSA() {
                 Problem Solving Stats
               </p>
               <ul role="list" className="flex mt-2 gap-2 flex-col w-full p-2">
-                <li className={`flex flex-col rounded-lg w-full ${selectedPlatform == "codestudio"? "bg-gray-600" : ""} hover:bg-gray-700 cursor-pointer`}>
+                <li
+                  className={`flex flex-col rounded-lg w-full ${
+                    selectedPlatform == "codestudio" ? "bg-gray-600" : ""
+                  } hover:bg-gray-700 cursor-pointer`}
+                >
                   <div className="flex items-center justify-between w-full px-2 py-2">
                     <button
                       className="items-center w-full group flex gap-x-2 round-border text-[13px] font-[450]"
@@ -165,7 +172,11 @@ function DSA() {
                   </div>
                 </li>
 
-                <li className={`flex flex-col rounded-lg w-full ${selectedPlatform == "geeksforgeeks"? "bg-gray-600" : ""} hover:bg-gray-700 cursor-pointer`}>
+                <li
+                  className={`flex flex-col rounded-lg w-full ${
+                    selectedPlatform == "geeksforgeeks" ? "bg-gray-600" : ""
+                  } hover:bg-gray-700 cursor-pointer`}
+                >
                   <div className="flex items-center justify-between w-full px-2 py-2">
                     <button
                       className="items-center w-full group flex gap-x-2 round-border text-[13px] font-[450]"
@@ -207,7 +218,11 @@ function DSA() {
                   </div>
                 </li>
 
-                <li className={`flex flex-col rounded-lg w-full ${selectedPlatform == "leetcode"? "bg-gray-600" : ""} hover:bg-gray-700 cursor-pointer`}>
+                <li
+                  className={`flex flex-col rounded-lg w-full ${
+                    selectedPlatform == "leetcode" ? "bg-gray-600" : ""
+                  } hover:bg-gray-700 cursor-pointer`}
+                >
                   <div className="flex items-center justify-between w-full px-2 py-2">
                     <button
                       className="items-center w-full group flex gap-x-2 round-border text-[13px] font-[450]"
