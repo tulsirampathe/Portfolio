@@ -345,7 +345,7 @@ const projects = [
     live_demo_link: "https://snake-game-mu-one.vercel.app",
   },
   {
-    name: "LinkidIn Clone",
+    name: "TechLink",
     description:
       "Created a social networking platform with features like user registration, profile management, and post creation. Designed a responsive interface using Tailwind CSS and secured authentication with JWT.",
     tags: [
