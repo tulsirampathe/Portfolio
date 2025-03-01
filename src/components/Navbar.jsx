@@ -47,7 +47,7 @@ const Navbar = () => {
 
           {/* Add the "Download My Resume" button */}
           <a
-            href="/Resume.pdf"
+            href="/resume/Resume.pdf"
             download="Tulsiram_Pathe_Resume"
             className="green-pink-gradient bg-tertiary text-white py-2 px-6 rounded-full flex items-center gap-2 font-semibold shadow-lg hover:shadow-2xl hover:scale-105 transition-transform duration-300 ease-in-out"
           >

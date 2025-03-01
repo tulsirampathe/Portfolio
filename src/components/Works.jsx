@@ -7,6 +7,7 @@ import { brower, github } from "../assets";
 import { SectionWrapper } from "../hoc";
 import { projects } from "../constants";
 import { fadeIn, textVariant } from "../utils/motion";
+import { useState } from "react";
 
 const ProjectCard = ({
   index,
@@ -17,6 +18,7 @@ const ProjectCard = ({
   source_code_link,
   live_demo_link = "",
 }) => {
+  const [isExpanded, setIsExpanded] = useState(false);
   return (
     <motion.div variants={fadeIn("up", "spring", index * 0.5, 0.75)}>
       <Tilt
@@ -51,26 +53,43 @@ const ProjectCard = ({
                 </span>
               </div>
             )}
-            <div
-              onClick={() => window.open(source_code_link, "_blank")}
-              className="relative black-gradient w-10 h-10 rounded-full flex justify-center items-center cursor-pointer group"
+
+            {source_code_link && (
+              <div
+                onClick={() => window.open(source_code_link, "_blank")}
+                className="relative black-gradient w-10 h-10 rounded-full flex justify-center items-center cursor-pointer group"
               >
-              <img
-                src={github}
-                alt="github"
-                className="w-1/2 h-1/2 object-contain"
-              />
-               {/* Tooltip */}
-               <span className="absolute top-full px-3 py-1 text-xs text-white bg-gray-900 rounded shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap">
-                 Source Code
+                <img
+                  src={github}
+                  alt="github"
+                  className="w-1/2 h-1/2 object-contain"
+                />
+                {/* Tooltip */}
+                <span className="absolute top-full px-3 py-1 text-xs text-white bg-gray-900 rounded shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap">
+                  Source Code
                 </span>
-            </div>
+              </div>
+            )}
           </div>
         </div>
 
         <div className="mt-5">
           <h3 className="text-white font-bold text-[24px]">{name}</h3>
-          <p className="mt-2 text-secondary text-[14px]">{description}</p>
+          <p
+            className={`mt-2 text-secondary text-[14px] ${
+              isExpanded ? "" : "line-clamp-3"
+            }`}
+          >
+            {description}
+          </p>
+          {description.length > 150 && ( // Show "Read More" if description is long
+            <button
+              onClick={() => setIsExpanded(!isExpanded)}
+              className="text-blue-400 mt-2 text-sm"
+            >
+              {isExpanded ? "Read Less" : "Read More"}
+            </button>
+          )}
         </div>
 
         <div className="mt-4 flex flex-wrap gap-2">
@@ -108,7 +127,16 @@ const Works = () => {
 
       <div className="mt-20 flex flex-wrap gap-7">
         {projects.map((project, index) => (
-          <ProjectCard key={`project-${index}`} index={index} {...project} />
+          <div
+            key={`project-${index}`}
+            className={
+              index === projects.length - 1
+                ? "w-full flex justify-center"
+                : "w-auto"
+            }
+          >
+            <ProjectCard index={index} {...project} />
+          </div>
         ))}
       </div>
     </>

@@ -36,6 +36,7 @@ import starbucks from "./company/starbucks.png";
 import tesla from "./company/tesla.png";
 
 import codenest from './projects/codenest.png'
+import sistec_sih from './projects/Sistec_SIH.png'
 import linkdInClone from './projects/linkedInClone.png'
 import snakeGame from './projects/snakeGame.png'
 
@@ -75,6 +76,7 @@ export {
   starbucks,
   tesla,
   codenest,
+  sistec_sih,
   linkdInClone,
   snakeGame
 };

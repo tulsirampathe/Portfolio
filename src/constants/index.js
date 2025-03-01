@@ -20,6 +20,7 @@ import {
   reactjs,
   redux,
   shopify,
+  sistec_sih,
   snakeGame,
   sql,
   starbucks,
@@ -319,30 +320,34 @@ const projects = [
       },
     ],
     image: codenest,
-    source_code_link: "https://github.com/tulsirampathe/Campus-Platform",
+    source_code_link: "https://github.com/tulsirampathe/codenest-client",
     live_demo_link: "https://codenest-arww.onrender.com",
   },
   {
-    name: "Snake Game",
+    name: "SISTec SIH",
     description:
-      "A classic Snake Game built using HTML5 Canvas, JavaScript, and CSS. Control the snake, eat the food, and grow as long as possible while avoiding collisions with the walls and your own body!",
+      "Developed the official website for SISTec Innovation Hackathon 3.0—a flagship college event organized by the Department of Computer Science & Engineering at SISTec Ratibad that challenges students to create innovative solutions in domains like HealthTech, AgriTech, EduTech, and Smart City initiatives.",
     tags: [
       {
-        name: "html5",
+        name: "react",
         color: "blue-text-gradient",
       },
       {
-        name: "javascript",
+        name: "node.js",
         color: "green-text-gradient",
       },
       {
-        name: "css",
+        name: "mongodb",
         color: "pink-text-gradient",
       },
+      {
+        name: "tailwind",
+        color: "purple-text-gradient",
+      },
     ],
-    image: snakeGame,
-    source_code_link: "https://github.com/tulsirampathe/Snake-Game",
-    live_demo_link: "https://snake-game-mu-one.vercel.app",
+    image: sistec_sih,
+    source_code_link: "",
+    live_demo_link: "https://www.sistecrsih.in/",
   },
   {
     name: "TechLink",
@@ -369,25 +374,47 @@ const projects = [
     image: linkdInClone,
     source_code_link: "https://github.com/tulsirampathe/LinkedIn-Clone",
   },
+  {
+    name: "Snake Game",
+    description:
+      "A classic Snake Game built using HTML5 Canvas, JavaScript, and CSS. Control the snake, eat the food, and grow as long as possible while avoiding collisions with the walls and your own body!",
+    tags: [
+      {
+        name: "html5",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "javascript",
+        color: "green-text-gradient",
+      },
+      {
+        name: "css",
+        color: "pink-text-gradient",
+      },
+    ],
+    image: snakeGame,
+    source_code_link: "https://github.com/tulsirampathe/Snake-Game",
+    live_demo_link: "https://snake-game-mu-one.vercel.app",
+  },
 ];
 
 const socialMediaLinks = [
   {
     name: "LinkedIn",
     url: "https://www.linkedin.com/in/tulsiram-pathe-03b7b9258/",
-    img: "./social_media/linkedin.png"
+    img: "./social_media/linkedin.png",
   },
   {
     name: "GitHub",
     url: "https://github.com/tulsirampathe",
-    img: './social_media/github.png'
+    img: "./social_media/github.png",
   },
   {
     name: "Instagram",
     url: "https://www.instagram.com/tulsiram_pathe_/",
-    img: './social_media/instagram.png'
+    img: "./social_media/instagram.png",
   },
-]
+];
 export {
   backendTechnologies,
   experiences,
@@ -398,5 +425,5 @@ export {
   technologies,
   testimonials,
   toolsTechnologies,
-  socialMediaLinks
+  socialMediaLinks,
 };
